@@ -1,0 +1,89 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital@1&display=swap');
+
+:root {
+    --hue-neutral: 201;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-color: hsl(var(--hue), 0%, 16%, 1);
+}
+
+body.correct {
+    --hue: var(var(--hue-correct));
+}
+
+body.wrong {
+--hue: var(var(--hue-wrong));
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    font-size: 2.5rem;
+}
+
+
+.answer-btns {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 50%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+    font-size: 2rem;
+}
+
+.button:hover {
+    border-color: black;
+}
+
+button.correct {
+    --hue: var(--hue-correct); 
+}
+
+button.wrong {
+    --hue: var(--hue-wrong);
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-button-btn, .next-button-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.hide {
+    display: none;
+}
